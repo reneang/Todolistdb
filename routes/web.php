@@ -13,8 +13,8 @@
 Route::get('/abc', 'CalculatorController@tokped');
 
 Route::get('/todo', 'ToDoListController@GetToDo');
-
 Route::post('/addtodo', 'ToDoListController@AddToDo');
+Route::post('/deletetodo/{id}', 'ToDoListController@DeleteToDo');
 
 Route::group(['prefix' => 'palindrome'], function() {
 

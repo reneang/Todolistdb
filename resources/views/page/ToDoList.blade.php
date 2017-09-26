@@ -80,11 +80,14 @@
             {{--  <td>{{ $d->todo }}</td>  --}}
             <td>
               <!-- <input type="checkbox" value="" (change)="CompleteToDo($event, t.id)"> -->
+              <form action="{{ url('/deletetodo/' . $d->id) }}" method="POST">
+              {{ csrf_field() }} 
               <input type="checkbox" value="" (change)="CompleteToDo()">
             </td>
             <td>
-              <button type="button" class="btn btn-danger" (click)="DeleteToDo()"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
+              <button type="submit" class="btn btn-danger" (click)="DeleteToDo()"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
               <!-- <button type="button" class="btn btn-danger" (click)="DeleteToDo(t.id)"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete </button> -->
+              </form>
             </td>
         </tr>
             {{--  @endif  --}}

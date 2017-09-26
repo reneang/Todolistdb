@@ -42,4 +42,9 @@ class ToDoListController extends Controller
         // return view('page.ToDoList',["data" => $mytodo]);
         // kalau ada 2 form contohnya mytodo2, dengan 2 input, buat lagi variable baru 
     }
+
+    function DeleteToDo($id){
+        DB::delete('delete from todo where id = ?', [$id]);
+        return redirect ('/todo');                
+    }
 }
